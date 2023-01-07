@@ -7,7 +7,7 @@ class CartController extends GetxController {
 
   int get count => cartItems.length;
 
-  var testAmount = 0.0;
+  // var testAmount = 0.0;
 
   // ai getter property observable korar dorkar nai karon se listen korche
   // total amount
@@ -18,7 +18,7 @@ class CartController extends GetxController {
 
   addToCart(Product product) {
     cartItems.add(product);
-    testAmount = totalPrice;
-    update();
+    // testAmount = totalPrice;
+    // update();
   }
 }

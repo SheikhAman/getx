@@ -62,6 +62,18 @@ class ShoppingPage extends StatelessWidget {
                                 foregroundColor: Colors.white,
                               ),
                             ),
+                            Obx(
+                              () => IconButton(
+                                  onPressed: () {
+                                    controller.products[index].isFavorite
+                                        .toggle();
+                                  },
+                                  icon: controller
+                                          .products[index].isFavorite.value
+                                      ? Icon(Icons.check_box_rounded)
+                                      : Icon(Icons
+                                          .check_box_outline_blank_outlined)),
+                            ),
                           ],
                         ),
                       ),
@@ -70,12 +82,16 @@ class ShoppingPage extends StatelessWidget {
                 ),
               ),
             ),
-            GetBuilder<CartController>(builder: (controller) {
-              return Text(
-                'Total Amount: ${controller.testAmount}',
-                style: TextStyle(fontSize: 32, color: Colors.white),
-              );
-            }),
+
+            // In Obx you need to make the instance of the controller
+            Obx(
+              () {
+                return Text(
+                  'Total Amount: ${cartController.totalPrice}',
+                  style: TextStyle(fontSize: 32, color: Colors.white),
+                );
+              },
+            ),
             SizedBox(
               height: 100.0,
             )
