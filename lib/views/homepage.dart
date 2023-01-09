@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:getx/controllers/product_controller.dart';
 import 'package:getx/views/product_tile.dart';
+import 'package:getx/views/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,15 +21,27 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
         leading: Icon(
           Icons.arrow_back,
-          color: Colors.black,
+          color: Colors.white,
         ),
         actions: [
-          Icon(
-            Icons.shopping_cart,
-            color: Colors.black,
+          IconButton(
+            onPressed: () {
+              Get.to(SettingsPage());
+            },
+            icon: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.shopping_cart,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
