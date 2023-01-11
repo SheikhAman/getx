@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/screen_one.dart';
+import 'package:getx/screen_two.dart';
 
-import 'api_test_page.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ApiTestPage(),
+      home: HomeScreen(),
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => HomeScreen(),
+        ),
+        GetPage(
+          name: '/screenOne',
+          page: () => ScreenOne(),
+        ),
+        GetPage(
+          name: '/screenTwo',
+          page: () => ScreenTwo(),
+        ),
+      ],
     );
   }
 }
