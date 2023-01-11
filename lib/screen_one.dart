@@ -15,7 +15,7 @@ class _ScreenOneState extends State<ScreenOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen One' + widget.name),
+        title: Text('Screen One ' + Get.arguments[0] + Get.arguments[1]),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

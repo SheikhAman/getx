@@ -45,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
           TextButton(
             onPressed: () {
               //  Get.to(ScreenOne( name: ' Sheikh Aman',  ));
-              Get.toNamed('/screenOne', arguments: 'Sheikh Aman');
+
+              // argument pass
+              Get.toNamed('/screenOne', arguments: ['Sheikh Aman', 'I am Pro']);
               // Navigator.push(
               //   context,
               //   MaterialPageRoute(builder: (context) => ScreenOne()),

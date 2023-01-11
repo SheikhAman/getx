@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
+      // initialRoute: '/',
       getPages: [
         GetPage(
           name: '/',
