@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/helper/dialog_helper.dart';
-import 'package:getx/screen_one.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,57 +11,35 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height * 1;
     return Scaffold(
       appBar: AppBar(
         title: Text('Getx Tutorials'),
       ),
       body: Column(
         children: [
-          Card(
-            child: ListTile(
-              title: Text('Getx Dialog Alert'),
-              subtitle: Text('Getx Dialog Alert test'),
-              onTap: () {
-                DialogHelper.showDialog();
-              },
+          Container(
+            /*
+            height protita device very kore
+           height * 1 mane full screen occupy korbe
+           */
+            /// height: MediaQuery.of(context).size.height,
+            height: Get.height * 0.2,
+            width: Get.width * 0.9,
+            color: Colors.red,
+            child: Center(
+              child: Text('Center'),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text('Getx Bottom Sheet'),
-              subtitle: Text('Getx Bottom Sheet test'),
-              onTap: () {
-                DialogHelper.showBottomSheet();
-              },
+          Container(
+            height: Get.height * 0.1,
+            width: Get.width * 0.9,
+            color: Colors.blue,
+            child: Center(
+              child: Text('Center'),
             ),
-          ),
-
-          SizedBox(
-            height: 20,
-          ),
-// Getx Navigation
-          TextButton(
-            onPressed: () {
-              //  Get.to(ScreenOne( name: ' Sheikh Aman',  ));
-
-              // argument pass
-              Get.toNamed('/screenOne', arguments: ['Sheikh Aman', 'I am Pro']);
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => ScreenOne()),
-              // );
-            },
-            child: Text('Go to next screen'),
           ),
         ],
-      ),
-
-      // Snackbar
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          DialogHelper.showSnackBar('Sheikh Aman', 'Pro Coder');
-        },
-        child: Center(child: Text('Shackbar')),
       ),
     );
   }
