@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/my_controller.dart';
 
 import 'home_screen.dart';
 
 void main() {
+  // registering my controller up in the widget tree
+  Get.put(MyController());
   runApp(const MyApp());
 }
 
