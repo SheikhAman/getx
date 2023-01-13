@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'my_controller.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -11,16 +9,34 @@ class HomeScreen extends StatelessWidget {
     print('build');
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          GetBuilder<MyController>(
-            builder: (controller) => Text('${controller.count.value}'),
+          ListTile(
+            title: Text('message'.tr),
+            subtitle: Text('name'.tr),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Get.find<MyController>().increment();
-            },
-            child: const Text('Increment'),
+          SizedBox(
+            height: 60,
           ),
+          Row(
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  Get.updateLocale(Locale('en', 'US'));
+                },
+                child: Text('English'),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              OutlinedButton(
+                  onPressed: () {
+                    Get.updateLocale(Locale('en', 'BN'));
+                  },
+                  child: Text('Bangla')),
+            ],
+          )
         ],
       ),
     );
