@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
               ),
               OutlinedButton(
                   onPressed: () {
+                    // UPDATE KORE DIBE
                     Get.updateLocale(Locale('en', 'BN'));
                   },
                   child: Text('Bangla')),
